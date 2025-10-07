@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*~
+~$*
+
+# Build/site (if you add docs tooling later)
+site/
+dist/
