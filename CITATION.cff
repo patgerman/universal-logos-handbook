@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this repository, please cite it as below.
+title: Universal Logos (UL) Handbook
+authors:
+  - family-names: Gessner
+    given-names: Patrick A.
+date-released: 2025-10-07
+version: 1.0.0
+type: manual
+license: CC-BY-4.0
+repository-code: https://github.com/your-username/universal-logos-handbook
