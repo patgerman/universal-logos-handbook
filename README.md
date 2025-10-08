@@ -1,22 +1,22 @@
-# Universal Logos (UL) Handbook
+# 🌐 Universal Logos (UL) Project
 
-A free, open reference for a universal, machine–native + human–readable protocol for communication.
-This repository publishes the Universal Logos (UL) Handbook and provides tools and guides for using it with modern AI models.
+**A free, open reference for a universal, machine-native and human-readable protocol for communication.**  
+This repository publishes the *Universal Logos (UL) Handbook* — a comprehensive guide to building semantic bridges between humans, artificial intelligences, and robotic systems.
 
-* * *
+---
 
-##  What is Universal Logos (UL)?
+## 📘 What is Universal Logos (UL)?
 
-Universal Logos (UL) is a dual-channel meta-language:
+**Universal Logos (UL)** is a dual-channel meta-language designed for clarity, logic, and interoperability.
 
-  * a canonical logical core for machines (UL/1 statements, S-expressions, JSON-like structures), and
-  * a surface gloss for humans (natural-language-readable summaries).
+- **Machine channel:** canonical logical core (`UL/1` statements, S-expressions, JSON-like schemas)  
+- **Human channel:** surface gloss (readable summaries and contextual meaning)
 
-It encodes events, roles, modality, evidence, time, and confidence explicitly — removing ambiguity from both human and AI communication.
+UL encodes **events, roles, modality, evidence, time, and confidence** explicitly — eliminating ambiguity in both human and AI communication.
 
-* * *
+---
 
-##  Repository layout
+## 📂 Repository Layout
 
 ```
 /
@@ -27,54 +27,56 @@ It encodes events, roles, modality, evidence, time, and confidence explicitly �
 ├─ CONTRIBUTING.md
 ├─ CODE_OF_CONDUCT.md
 ├─ CITATION.cff
-├─ .gitignore
 ├─ handbook/
-│  └─ Universal_Logos_Handbook_FULL.docx
+│  └─ Universal_Logos_WhitePage_2025_Draft_to_v1.0.pdf
 └─ AI-read/
    └─ Universal_Logos_Handbook_for_AI_to_read.html
 ```
 
-* * *
+---
 
-##  Quick start
+## 🚀 Quick Start
 
 1. **Read the Handbook**  
-   – [Open Universal Logos Handbook (DOCX)](handbook/Universal_Logos_Handbook_FULL.docx)  
-   – **For LLMs**: [AI‑read HTML (single page, UTF‑8)](https://patgerman.github.io/universal-logos-handbook/AI-read/Universal_Logos_Handbook_for_AI_to_read.html)
+   → [Universal Logos WhitePage 2025 Draft to v1.0 (PDF)](https://github.com/patgerman/universal-logos-handbook/tree/main/handbook/Universal_Logos_WhitePage_2025_Draft_to_v1.0.pdf)  
+   → **For LLMs:** [AI-read HTML (single page, UTF-8)](https://patgerman.github.io/universal-logos-handbook/AI-read/Universal_Logos_Handbook_for_AI_to_read.html)
 
-2. **Learn to use it with LLMs**  
-   See **[HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)**
+2. **Learn to Use UL with LLMs**  
+   See [HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md) for practical integration, examples, and use-cases.
 
-3. **Cite this work**  
-   See the **[CITATION.cff](CITATION.cff)** file — GitHub also provides a “Cite this repository” button.
+3. **Cite this Work (Harvard Style)**  
+   Gessner, P. A. (2025). *Universal Logos WhitePage 2025 Draft to v1.0.* Universal Logos Project. Available at: [https://github.com/patgerman/universal-logos-handbook](https://github.com/patgerman/universal-logos-handbook)
 
-* * *
+---
 
-##  What you can do with UL
+## 💡 What You Can Do with UL
 
-  * Build LLM systems that communicate using a formal, universal semantic protocol.
-  * Create inter-agent communication languages that are transparent and self-auditing.
-  * Integrate UL into knowledge graphs, ontology frameworks, and governance systems.
-  * Teach or explore linguistics, logic, or philosophy of meaning through formal semantics.
+- Build **inter-agent communication systems** using a formal, universal semantic protocol.  
+- Create **AI–AI, human–AI, and AI–robot** language layers with traceable meaning.  
+- Integrate UL into **knowledge graphs, ontology frameworks,** or **governance systems.**  
+- Explore **linguistics, logic, and philosophy of meaning** via formal semantics.  
+- Extend UL for **XAI, automation, synthetic cognition,** and **AI self-reflection.**
 
-For practical applications and examples (robotics, XAI, automation, ontology bridging, creative uses, and more), see the detailed **[HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)**.
+For advanced applications and experimental setups, see [HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md).
 
-* * *
+---
 
 ## ⚖️ License
 
-  * Text & diagrams → **[CC BY 4.0](LICENSE-CC-BY-4.0)**
-  * Code samples & schemas → **[MIT](LICENSE-MIT)**
+- Text & diagrams → [CC BY 4.0](LICENSE-CC-BY-4.0)  
+- Code & schemas → [MIT](LICENSE-MIT)
 
 > By contributing, you agree that your text contributions are licensed under CC BY 4.0  
 > and your code contributions under MIT.
 
-* * *
+---
 
-##  Maintainer
+## 👤 Maintainer
 
-Patrick A. Gessner
+**Patrick A. Gessner**  
+*Founder & Lead Researcher — Universal Logos Project*
 
-* * *
+---
 
-> “Universal Logos — the shared language of meaning between humans and machines.”
+© 2025 **Universal Logos Project** · All rights reserved.  
+**Copyright Patrick A. Gessner**
