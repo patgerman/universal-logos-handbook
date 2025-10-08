@@ -27,8 +27,7 @@ It encodes **events, roles, modality, evidence, time, and confidence** explicitl
 ├─ CODE_OF_CONDUCT.md
 ├─ CITATION.cff
 ├─ .gitignore
-└─ handbook/
-   └─ Universal_Logos_Handbook_FULL.docx
+└─ Universal_Logos_Handbook_FULL.docx
 ```
 
 ---
@@ -36,7 +35,7 @@ It encodes **events, roles, modality, evidence, time, and confidence** explicitl
 ## 🚀 Quick start
 
 1. **Read the Handbook**  
-   📄 [Open Universal Logos Handbook (DOCX)](handbook/Universal_Logos_Handbook_FULL.docx)
+   📄 [Open Universal Logos Handbook (DOCX)](Universal_Logos_Handbook_FULL.docx)
 
 2. **Learn to use it with LLMs**  
    🧠 [Read HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)
