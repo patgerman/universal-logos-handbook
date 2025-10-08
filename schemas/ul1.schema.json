@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal Logos UL/1 Message",
+  "type": "object",
+  "required": [
+    "ul_version",
+    "id",
+    "from",
+    "to",
+    "t",
+    "clauses"
+  ],
+  "properties": {
+    "ul_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+    },
+    "id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "t": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ctx": {
+      "type": "string"
+    },
+    "clauses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "event",
+          "predicate",
+          "args"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "assert",
+              "query",
+              "command",
+              "evaluate",
+              "hypothesize",
+              "plan",
+              "status",
+              "explain"
+            ]
+          },
+          "event": {
+            "type": "string"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "args": {
+            "type": "object"
+          },
+          "time": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "tense": {
+                "type": "string",
+                "enum": [
+                  "past",
+                  "present",
+                  "future"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "evidence": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "gloss": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,24 @@
+{
+  "ul_version": "1.0",
+  "id": "ad5e539e-6297-44a9-9ffc-86f075db51d9",
+  "from": "Robot.Arm",
+  "to": "Planner.AI",
+  "t": "2025-10-08T08:28:57Z",
+  "ctx": "warehouse.pick.v1",
+  "clauses": [
+    {
+      "type": "status",
+      "event": "e_pick",
+      "predicate": "status",
+      "args": {
+        "state": "started",
+        "task_ref": "e_pick"
+      },
+      "evidence": [
+        "perception"
+      ],
+      "confidence": 0.99
+    }
+  ],
+  "gloss": "Status: pick task e_pick started."
+}

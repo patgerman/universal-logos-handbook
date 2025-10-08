@@ -1,0 +1,34 @@
+{
+  "ul_version": "1.0",
+  "id": "ae0e7245-1ded-44c5-87ee-0b4703116ea9",
+  "from": "Planner.AI",
+  "to": [
+    "Robot.Arm",
+    "Safety.Monitor"
+  ],
+  "t": "2025-10-08T08:28:57Z",
+  "ctx": "warehouse.pick.v1",
+  "clauses": [
+    {
+      "type": "command",
+      "event": "e_pick",
+      "predicate": "pick",
+      "args": {
+        "agent": "arm1",
+        "object": {
+          "ref": "box#A123"
+        },
+        "from": "bin#7",
+        "to": "conveyor#2"
+      },
+      "time": {
+        "start": "2025-10-08T08:28:57Z"
+      },
+      "evidence": [
+        "plan"
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "gloss": "Command: arm1 picks box A123 from bin 7 to conveyor 2."
+}

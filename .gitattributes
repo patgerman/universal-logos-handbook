@@ -1,0 +1,3 @@
+# Treat .md and .docx as documentation for GitHub linguist
+*.md linguist-documentation
+*.docx linguist-documentation

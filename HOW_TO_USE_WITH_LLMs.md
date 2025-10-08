@@ -1,171 +1,134 @@
-# Using the Universal Logos (UL) Handbook with LLMs
+# How to Use Universal Logos (UL) with LLMs & Robots
 
-> **Purpose:**  
-> The Universal Logos Handbook is not just a document — it is a **meta-language** and **semantic protocol** designed for both human understanding and machine communication.  
-> This guide explains how to use it with Large Language Models (LLMs) to enable structured reasoning, inter-agent communication, and explainable AI outputs.
+This guide shows how to apply UL across **AI↔AI**, **AI↔Robot**, and **Human↔AI** scenarios. UL provides a **logical core (UL/1)** plus a **Surface Gloss** for humans.
 
 ---
 
-## 1. Overview
+## 0) Mental Model
 
-The **Universal Logos (UL)** framework provides a **linguistically neutral, semantically explicit, and machine-parsable** representation of meaning.
+- **UL/1** = *machine‑native message* (JSON or S‑expr) encoding: predicate, roles, time, evidence, confidence.
+- **Surface Gloss** = *human‑readable paraphrase* of the same message.
+- **Round‑trip:** Agents should preserve semantics when translating between the two.
 
-When loaded into an LLM, UL becomes:
-- a **semantic compiler** that translates natural language into structured thought,
-- a **transparent reasoning layer** that logs evidence and confidence,
-- and a **universal bridge** between AI modules, humans, and databases.
+---
 
-### Example syntax (from the handbook)
-```ul
-(assert
- :event e1
- :pred describe
- :args { theme (REF Universal_Logos_Handbook_FULL.docx)
-         topic (REF UNI-LOGOS) }
- :time { tense present }
- :evid report
- :conf 1.0
-)
-Surface Gloss:
-describe{theme:Universal_Logos_Handbook_FULL.docx, topic:UNI-LOGOS}; TIME[present]; EVID[report]; CONF=1.0;
+## 1) Prompt Scaffolds (Human → LLM)
+
+**A. Ask for UL/1 + Gloss**
+
+> “Answer in UL/1 JSON **and** provide a short Surface Gloss. Encode the event structure (predicate, roles, time), include an evidence label and a confidence from 0–1.”
+
+**B. Constrain the ontology**
+
+> “Use predicates from this set: `describe, pick, place, move, measure, compare, verify, plan`. Arguments must be explicit key‑value pairs.”
+
+**C. Require citations or traces**
+
+> “Add `evidence` with labels such as `report, citation, perception, statistic, trace`, and include a `meta.trace` string if applicable.”
+
+---
+
+## 2) Agent‑to‑Agent Messages (AI ↔ AI)
+
+**Example — Knowledge handoff**
+
+```json
+{
+  "ul_version": "1.0",
+  "id": "b2b8ab6d-97f1-41ae-8b0b-1fe1c2a91111",
+  "from": "Retriever.AI",
+  "to": "Reasoner.AI",
+  "t": "2025-10-08T08:00:00Z",
+  "ctx": "faq.answering",
+  "clauses": [{
+    "type": "assert",
+    "event": "e1",
+    "predicate": "describe",
+    "args": { "theme": {"ref": "doc:UL-handbook#sec3"}, "topic": "UL/1 message format" },
+    "evidence": ["citation"],
+    "confidence": 0.88
+  }],
+  "gloss": "Describing UL/1 message format per doc section 3."
+}
 ```
 
 ---
 
-## 2. How to Upload and Use the Handbook with an LLM
+## 3) AI ↔ Robot
 
-### Step 1 — Upload or convert
-Upload `handbook/Universal_Logos_Handbook_FULL.docx` into your LLM’s knowledge or context.  
-Optionally, convert it to Markdown for efficiency:
-```bash
-pandoc handbook/Universal_Logos_Handbook_FULL.docx -o ul-handbook.md
+**Example — Command a pick action**
+
+```json
+{
+  "ul_version": "1.0",
+  "id": "f0b0b4db-8a21-4a0d-aeee-3454321f1111",
+  "from": "Planner.AI",
+  "to": ["Robot.Arm", "Safety.Monitor"],
+  "t": "2025-10-08T08:30:00Z",
+  "ctx": "warehouse.pick.v1",
+  "clauses": [{
+    "type": "command",
+    "event": "e_pick",
+    "predicate": "pick",
+    "args": { "agent": "arm1", "object": {"ref": "box#A123"}, "from": "bin#7", "to": "conveyor#2" },
+    "time": { "start": "2025-10-08T08:31:00Z" },
+    "evidence": ["plan"],
+    "confidence": 0.95
+  }],
+  "gloss": "Command: arm1 picks box A123 from bin 7 to conveyor 2."
+}
 ```
 
-### Step 2 — Initialize the LLM
-Prompt example:
-> “You are now equipped with the Universal Logos Handbook, a meta-language for expressing meaning explicitly.  
-> Use UL syntax for internal reasoning, structured answers, and inter-agent communication.”
+**Example — Status report**
 
-### Step 3 — Generate UL statements
-Example task:
-```
-Generate a UL/1 statement representing: ‘The user requests the AI to summarize the current document.’
-```
-Output:
-```ul
-(request
- :pred summarize
- :args { agent AI
-         theme current_document
-         recipient user }
- :conf 0.97
-)
-```
-
-### Step 4 — Integrate UL into pipelines
-- Feed UL output to other agents or APIs.  
-- Parse UL into JSON for data storage.  
-- Chain LLMs so one agent produces UL, another interprets and executes it.
-
----
-
-## 3. Core Use-Case Families
-
-### 🧠 1. AI Architecture / Engineering Layer
-**Goal:** UL as internal communication protocol between reasoning modules.
-
-**Examples**
-- *Kernel Language:* Modules (Planner, Reasoner, Memory) exchange UL/1 messages.  
-- *Self-Reflective Logs:* Model outputs reasoning in UL with `:evid` and `:conf`.  
-- *Prompt Compiler:* Converts human prompts to UL intermediate representation.
-
----
-
-### 🧩 2. Ontology Bridge / Knowledge Integration
-**Goal:** UL links ontologies, APIs, and databases.
-
-**Examples**
-- `:link` fields map UL predicates to Wikidata or schema.org.  
-- Knowledge graphs merge through UL statements.  
-- Data governance uses `:evid` + `:conf` metadata for traceability.
-
----
-
-### 🗣️ 3. Human–AI Interaction
-**Goal:** Transparent, interpretable communication layer.
-
-**Examples**
-- *Teaching Mode:* Display AI reasoning in UL form.  
-- *Explainable Chats:* Conversations produce live UL glosses.  
-- *Explainable AI:* Use UL as rationale markup language.
-
----
-
-### ⚙️ 4. Automation / Workflow Logic
-**Goal:** UL as universal command schema.
-
-**Examples**
-- *Robotics:* `(request :pred move :args {agent robot-1 location table-1})`  
-- *IoT:* Sensors emit `(measure …)` UL packets.  
-- *Smart Contracts:* `law:` namespace encodes machine-readable legal clauses.
-
----
-
-### 📚 5. Research / Linguistics / Education
-**Goal:** Use UL for linguistic modeling and cognitive simulation.
-
-**Examples**
-- Simulate evidentiality and modality logic.  
-- Annotate multilingual data in UL.  
-- Teach philosophy of logic via UL predicates.
-
----
-
-### 🧬 6. Creative and Symbolic Applications
-**Goal:** UL as artistic or philosophical medium.
-
-**Examples**
-- *Poetic UL Manifestos* — minimal semantic art.  
-- *Meta-Narratives* — stories written in UL syntax.  
-- *AI Mythology Corpus* — the “language of reason” for machine civilizations.
-
----
-
-### 🔒 7. Governance / Ethics / Audit
-**Goal:** UL as transparency and accountability protocol.
-
-**Examples**
-- *Evidential Audit Chain:* every AI decision tagged with `:evid` and `:conf`.  
-- *Policy Compliance:* encode rules as `(assert :pred law:forbids …)` statements.  
-- *Explainable Governance OS:* UL-based self-auditing rule engines for institutions.
-
----
-
-## 4. Integration Tips
-
-- Store UL logs as JSON for analysis.  
-- Fine-tune models using UL examples.  
-- Combine UL outputs with vector databases for semantic retrieval.  
-- Add UL validators (linters) to automation pipelines.
-
----
-
-## 5. Next Steps
-
-1. Study the **Universal Logos Handbook** in `/handbook/`.  
-2. Try converting prompts into UL/1 manually.  
-3. Experiment with multi-agent systems using UL as a lingua franca.  
-4. Join discussions on new predicates and namespaces.
-
----
-
-### Citation
-```
-Gessner, Patrick A. (2025). *Universal Logos (UL) Handbook.*  
-GitHub Repository: https://github.com/patgerman/universal-logos-handbook  
-License: CC BY 4.0 / MIT
+```json
+{
+  "ul_version": "1.0",
+  "id": "3aa7a0a5-9b6b-4d81-b5a6-9b1c4eef2222",
+  "from": "Robot.Arm",
+  "to": "Planner.AI",
+  "t": "2025-10-08T08:31:05Z",
+  "ctx": "warehouse.pick.v1",
+  "clauses": [{
+    "type": "assert",
+    "event": "e_pick",
+    "predicate": "status",
+    "args": { "state": "started", "task_ref": "e_pick" },
+    "evidence": ["perception"],
+    "confidence": 0.99
+  }],
+  "gloss": "Status: pick task e_pick started."
+}
 ```
 
 ---
 
-> Universal Logos — the shared language of meaning between humans and machines.
+## 4) Human ↔ AI
+
+Ask the model to **always** return both **UL/1 JSON** and a **Surface Gloss**. Require confidence and evidence tags. Example prompt:
+
+> “Summarize this contract as UL/1 (JSON) with a `describe` predicate over each clause; provide `evidence: [citation]` with paragraph refs; give a short Surface Gloss.”
+
+---
+
+## 5) Good Practices
+
+- **Deterministic structure:** keep predicates and roles consistent per domain.
+- **Evidence & confidence:** always include.
+- **Time:** when in doubt, add `t` at the message level and `time` at the clause level.
+- **Validation:** run `tools/validate_ul1_json.py` or use the JSON Schema directly.
+- **Gloss discipline:** the gloss should be faithful to the UL/1 content, not a new claim.
+
+---
+
+## 6) FAQ
+
+**Why JSON and S‑expressions?**  
+JSON plays well with tools; S‑exprs are compact and nest cleanly. Both are canonical views of the same semantics.
+
+**How is this different from plain “reasoning traces”?**  
+UL/1 is **typed, explicit, and machine‑verifiable**. It standardizes evidence, time, and confidence — and is designed to be auditable across agents.
+
+**Is there a security model?**  
+Use UL with your existing authz/authn. Include `meta.source` and `meta.trace` for provenance. Consider signing messages at transport or payload level.
+
