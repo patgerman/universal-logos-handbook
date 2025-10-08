@@ -1,93 +1,80 @@
-# Universal Logos Handbook
+# Universal Logos (UL) Handbook
 
-**Citation (Harvard Style):**  
-Gessner, P. A. (2025) *Universal Logos Handbook – A Linguistic and Symbolic Framework for Human–AI Communication.*  
-Available at: https://github.com/patgerman/universal-logos-handbook  
+A free, open reference for a universal, machine–native + human–readable protocol for communication.
+This repository publishes the Universal Logos (UL) Handbook and provides tools and guides for using it with modern AI models.
 
----
+* * *
 
-## Universal Logos Handbook
+##  What is Universal Logos (UL)?
 
-The **Universal Logos (UL) Handbook** defines a standard linguistic and symbolic framework for **Human–AI**, **AI–AI**, and **AI–Robot** communication.  
-It aims to be a shared protocol that is **machine-usable** and **human-learnable**, enabling **portable knowledge exchange** across architectures, models, and devices.
+Universal Logos (UL) is a dual-channel meta-language:
 
----
+  * a canonical logical core for machines (UL/1 statements, S-expressions, JSON-like structures), and
+  * a surface gloss for humans (natural-language-readable summaries).
 
-## Quick links
+It encodes events, roles, modality, evidence, time, and confidence explicitly — removing ambiguity from both human and AI communication.
 
-📘 **Handbook (PDF):** [`handbook/Universal_Logos_WhitePage_2025_Draft_to_v1.0.pdf`](handbook/Universal_Logos_WhitePage_2025_Draft_to_v1.0.pdf)  
-🧠 **AI-read (LLM JSON):** [`AI-read/Universal_Logos_Handbook_AI-read.json`](AI-read/Universal_Logos_Handbook_AI-read.json)  
-*This file is designed for LLMs to read, parse, and learn the handbook content directly in machine-readable format.*  
-🧩 **How to use with LLMs:** [`HOW_TO_USE_WITH_LLMs.md`](HOW_TO_USE_WITH_LLMs.md)  
-🗒 **Release Notes:** [`RELEASE_NOTES_v1.0.md`](RELEASE_NOTES_v1.0.md)
+* * *
 
----
-
-## What is Universal Logos?
-
-**Universal Logos (UL)** is a structured, compact representation format — a kind of “communication OS” — for:
-
-- **AI–AI knowledge interchange** (skills, capabilities, structured assertions)  
-- **Human–AI collaboration** (transparent prompts, interpretable outputs)  
-- **AI–Robot interaction** (sensor evidence, physical units, deadlines/guarantees)
-
-The handbook defines message patterns (e.g., `assert`, `query`, `measure`), evidence typing (`:evid sensor | report | calc`), unit enforcement, and transport formats (e.g., MQTT, CBOR) to support **closed-loop, real-world AI integration**.
-
----
-
-## Repository layout
+##  Repository layout
 
 ```
-universal-logos-handbook/
-├─ examples/                 # Example UL messages and end-to-end workflows
+/
+├─ README.md
+├─ HOW_TO_USE_WITH_LLMs.md
+├─ LICENSE-MIT
+├─ LICENSE-CC-BY-4.0
+├─ CONTRIBUTING.md
+├─ CODE_OF_CONDUCT.md
+├─ CITATION.cff
+├─ .gitignore
 ├─ handbook/
-│  └─ Universal_Logos_WhitePage_2025_Draft_to_v1.0.pdf
-├─ AI-read/                  # LLM-ready JSON mirror of the handbook
-│  └─ Universal_Logos_Handbook_AI-read.json
-├─ schemas/                  # (Planned) JSON/CBOR schema definitions
-├─ tools/                    # (Planned) helper scripts / converters
-├─ HOW_TO_USE_WITH_LLMs.md   # Practical guide for using UL with LLMs
-├─ UL_SPEC_v1.md             # In-repo spec notes or abridged draft (optional)
-├─ README.md                 # You are here
-└─ (licenses, contributing, citation, versioning, changelog, etc.)
+│  └─ Universal_Logos_Handbook_FULL.docx
+└─ AI-read/
+   └─ Universal_Logos_Handbook_for_AI_to_read.html
 ```
 
----
+* * *
 
-## Getting started
+##  Quick start
 
-1. Read the handbook (PDF).  
-2. Review [`HOW_TO_USE_WITH_LLMs.md`](HOW_TO_USE_WITH_LLMs.md) for ready-to-use prompt patterns.  
-3. Use the AI-read JSON if you want a machine-readable version for model training or contextual embedding.  
-4. Explore examples (coming soon in `/examples`) to see UL in action.
+1. **Read the Handbook**  
+   – [Open Universal Logos Handbook (DOCX)](handbook/Universal_Logos_Handbook_FULL.docx)  
+   – **For LLMs**: [AI‑read HTML (single page, UTF‑8)](https://patgerman.github.io/universal-logos-handbook/AI-read/Universal_Logos_Handbook_for_AI_to_read.html)
 
----
+2. **Learn to use it with LLMs**  
+   See **[HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)**
 
-## Contributing
+3. **Cite this work**  
+   See the **[CITATION.cff](CITATION.cff)** file — GitHub also provides a “Cite this repository” button.
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) and our [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).  
-For planned changes and known gaps, check [`CHANGELOG.md`](CHANGELOG.md) and [`RELEASE_NOTES_v1.0.md`](RELEASE_NOTES_v1.0.md).
+* * *
 
----
+##  What you can do with UL
 
-## Licensing
+  * Build LLM systems that communicate using a formal, universal semantic protocol.
+  * Create inter-agent communication languages that are transparent and self-auditing.
+  * Integrate UL into knowledge graphs, ontology frameworks, and governance systems.
+  * Teach or explore linguistics, logic, or philosophy of meaning through formal semantics.
 
-- **Source code:** [`LICENSE-MIT`](LICENSE-MIT)  
-- **Documentation & handbook:** [`LICENSE-CC-BY-4.0`](LICENSE-CC-BY-4.0)
+For practical applications and examples (robotics, XAI, automation, ontology bridging, creative uses, and more), see the detailed **[HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)**.
 
-If you use UL in academic work, please cite using [`CITATION.cff`](CITATION.cff).
+* * *
 
----
+## ⚖️ License
 
-## Releases
+  * Text & diagrams → **[CC BY 4.0](LICENSE-CC-BY-4.0)**
+  * Code samples & schemas → **[MIT](LICENSE-MIT)**
 
-Stable, citable drops are tagged. To fetch v1.0 locally:
+> By contributing, you agree that your text contributions are licensed under CC BY 4.0  
+> and your code contributions under MIT.
 
-```bash
-git fetch --tags
-git checkout v1.0
-```
+* * *
 
----
+##  Maintainer
 
-© 2025 Patrick A. Gessner · Universal Logos Project
+Patrick A. Gessner
+
+* * *
+
+> “Universal Logos — the shared language of meaning between humans and machines.”
