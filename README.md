@@ -1,16 +1,26 @@
 # Universal Logos (UL) Handbook
 
-A free, open reference for a **universal, machine‑native + human‑readable protocol** for communication.  
-This repository publishes the *Universal Logos (UL) Handbook* and invites community discussion and contributions.
+A free, open reference for a **universal, machine-native + human-readable protocol** for communication.  
+This repository publishes the *Universal Logos (UL) Handbook* and provides tools and guides for using it with modern AI models.
 
-## What is this?
-**Universal Logos (UL)** is a dual‑channel language: a precise **canonical core** for machines (S‑expressions / JSON) and a compact **surface gloss** for humans.  
-It encodes time, modality, evidence, confidence, roles, and units **explicitly** to eliminate ambiguity.
+---
 
-## Repository layout
+## 📘 What is Universal Logos (UL)?
+
+**Universal Logos (UL)** is a dual-channel meta-language:  
+- a **canonical logical core** for machines (UL/1 statements, S-expressions, JSON-like structures), and  
+- a **surface gloss** for humans (natural-language-readable summaries).  
+
+It encodes **events, roles, modality, evidence, time, and confidence** explicitly — removing ambiguity from both human and AI communication.
+
+---
+
+## 📂 Repository layout
+
 ```
 /
 ├─ README.md
+├─ HOW_TO_USE_WITH_LLMs.md
 ├─ LICENSE-MIT
 ├─ LICENSE-CC-BY-4.0
 ├─ CONTRIBUTING.md
@@ -21,23 +31,46 @@ It encodes time, modality, evidence, confidence, roles, and units **explicitly**
    └─ Universal_Logos_Handbook_FULL.docx
 ```
 
-## Quick start
-1. Open **handbook/Universal_Logos_Handbook_FULL.docx** to read the latest version.
-2. See **CONTRIBUTING.md** for how to file issues or propose changes.
-3. If you use UL in research, please cite using **CITATION.cff** (GitHub shows “Cite this repository”).
+---
 
-## License
-- **Text & diagrams**: Creative Commons **CC BY 4.0** (see `LICENSE-CC-BY-4.0`).
-- **Code samples / schemas** in this repo: **MIT** (see `LICENSE-MIT`).
+## 🚀 Quick start
 
-> By contributing, you agree that your text contributions are licensed under CC BY 4.0 and your code contributions under MIT.
+1. **Read the Handbook**  
+   📄 [Open Universal Logos Handbook (DOCX)](handbook/Universal_Logos_Handbook_FULL.docx)
 
-## Why dual licensing?
-Documentation and educational content fit CC BY 4.0; code samples and schemas are most useful under a permissive code license (MIT).
+2. **Learn to use it with LLMs**  
+   🧠 [Read HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md)
 
-## Maintainer
-Patrick A. Gessner
+3. **Cite this work**  
+   See the [`CITATION.cff`](CITATION.cff) file — GitHub automatically generates a “Cite this repository” link.
 
 ---
 
-> If you plan to host a website later, consider adding a `docs/` folder and enabling **GitHub Pages** or using **MkDocs**.
+## 🧩 What you can do with UL
+
+- Build **LLM systems** that communicate using a formal, universal semantic protocol.  
+- Create **inter-agent communication** languages that are transparent and self-auditing.  
+- Integrate UL into **knowledge graphs**, **ontology frameworks**, and **governance systems**.  
+- Teach or explore **linguistics, logic, or philosophy of meaning** through formal semantics.
+
+For practical applications and examples (robotics, XAI, automation, ontology bridging, creative uses, and more), see the detailed [HOW_TO_USE_WITH_LLMs.md](HOW_TO_USE_WITH_LLMs.md).
+
+---
+
+## ⚖️ License
+
+- **Text & diagrams** → [CC BY 4.0](LICENSE-CC-BY-4.0)  
+- **Code samples & schemas** → [MIT](LICENSE-MIT)
+
+> By contributing, you agree that your text contributions are licensed under CC BY 4.0  
+> and your code contributions under MIT.
+
+---
+
+## 🧭 Maintainer
+
+**Patrick A. Gessner**
+
+---
+
+> “Universal Logos — the shared language of meaning between humans and machines.”
