@@ -1,3 +1,7 @@
+> **Citation (Harvard Style):**  
+> Gessner, P. A. (2025) *Universal Logos Handbook – A Linguistic and Symbolic Framework for Human–AI Communication.*  
+> Available at: [https://github.com/patgerman/universal-logos-handbook](https://github.com/patgerman/universal-logos-handbook)
+
 # Universal Logos Handbook
 
 The **Universal Logos (UL) Handbook** defines a standard linguistic and symbolic framework for **Human–AI**, **AI–AI**, and **AI–Robot** communication. It aims to be a shared protocol that is machine-usable and human-learnable, enabling portable knowledge exchange across architectures, models, and devices.
@@ -37,7 +41,7 @@ universal-logos-handbook/
 ## Getting started
 
 1. **Read the handbook** (DOCX or PDF).  
-2. **Skim the LLM guide**: [`HOW_TO_USE_WITH_LLMs.md`](HOW_TO_USE_WITH_LLMs.md) for copy‑pasteable prompts and integration patterns.  
+2. **Skim the LLM guide**: [`HOW_TO_USE_WITH_LLMs.md`](HOW_TO_USE_WITH_LLMs.md) for copy-pasteable prompts and integration patterns.  
 3. **Try examples** (coming soon in `/examples`) and wire UL into your agent/tooling.
 
 ## Contributing
